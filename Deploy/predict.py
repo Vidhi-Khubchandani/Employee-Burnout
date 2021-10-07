@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pickle 
 import numpy as np
@@ -5,16 +6,16 @@ import pandas as pd
 import time
 import datetime
 from datetime import datetime, date, time
-
+    
 def load_model():
-    with open('cat_model_pickle','rb') as f:
-      cat_model =pickle.load(f)
-    return cat_model
-
-Data = load_model()
+    pickle_in =  open('saved_steps.pkl', 'rb')
+    classifier = pickle.load(pickle_in)
+    return classifier
 
 def Predict(Employee_ID, Date_of_Joining, Gender, Company_Type, WFH_Setup_Available, Designation, Resource_Allocation, Mental_Fatigue_Score):
 
+
+    st.title("Calculate Employee Burnout Score")
     C_Mental_Fatigue_Score = 0
     C_Resource_Allocation = 0 
     C_Designation = 0
@@ -77,7 +78,7 @@ def Predict(Employee_ID, Date_of_Joining, Gender, Company_Type, WFH_Setup_Availa
     Date_of_Joining = pd.to_datetime(Date_of_Joining)
     Date_of_Joining = (Date_Today - Date_of_Joining)
 
-    return Data.predict( Gender, Company_Type, WFH_Setup_Available, Designation, Resource_Allocation, Mental_Fatigue_Score,C_Mental_Fatigue_Score,C_Designation,C_Resource_Allocation,Date_of_Joining)
+    return load_model.predict( Gender, Company_Type, WFH_Setup_Available, Designation, Resource_Allocation, Mental_Fatigue_Score,C_Mental_Fatigue_Score,C_Designation,C_Resource_Allocation,Date_of_Joining)
 
 
 def main():
@@ -99,5 +100,5 @@ def main():
 
     ok = st.button("Predict")
     if ok:
-        Score = Data.Predict(Employee_ID, Date_of_Joining, Gender, Company_Type, WFH_Setup_Available, Designation, Resource_Allocation, Mental_Fatigue_Score)
+        Score = load_model.Predict(Employee_ID, Date_of_Joining, Gender, Company_Type, WFH_Setup_Available, Designation, Resource_Allocation, Mental_Fatigue_Score)
         st.subheader(f"The burnout score is {Score[0]:.2f}")
