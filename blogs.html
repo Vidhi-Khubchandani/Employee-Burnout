@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Home Page</title>
+  <style>
+    .responsive {
+          width: 100%;
+          height: auto;
+        }
+    html {
+      scroll-behavior: smooth;
+    }
+    .search.input {
+        width:15rem;
+        padding: 12px 24px;
+        background-color: transparent;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 10px;
+        color: #fff;
+        background-color: transparent;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 95% center;
+        border-radius: 50px;
+        border: 1px solid #fff;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }    
+    .search:focus{
+        padding: 12px 0;
+        outline: 0;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #fff;
+        border-radius: 0;
+        background-position: 100% center;
+    }
+    .nav-item{
+        white-space:nowrap;
+        font-weight: bolder;
+    }
+    .navbar-nav>li>a:hover{
+        color: brown !important;
+        cursor: pointer!important;
+        transition: all 300ms ease-in-out!important;
+    }
+    /* #scrollTopBtn{background-color:rgba(64,64,64,.9);color:#fff;padding:10px 10px;position:fixed;width:40px;height:40px;display:none;cursor:pointer;bottom:0;right:calc(50% - 20px);margin-bottom:0;z-index:1023}
+    @media only screen and (max-width:280px){#scrollTopBtn{left:215px}}
+    @media only screen and (max-width:767px){#scrollTopBtn{right:40px;bottom:60px;border-radius:50%}}
+    .header--scrollTop__btn{background-color:#39464e;border-color:#39464e;color:#fff;position:fixed;right:50px;bottom:50px;border-radius:50%;padding:15px;display:none} */
+</style>
+</head>
+<body>
+  <nav class="navbar fixed-top transparent navbar-expand-lg navbar-light" id="navbar">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="logo2.png" style="width:90px;height:70px;vertical-align:top;"></a>
+          <div class="topnav-right">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          <a class="nav-link text-light active" aria-current="page" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link text-light active" href="blogs.html" target="_blank">Blogs</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link text-light active" href="#predictor">Predictor</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link text-light active" href="about.html" target="_blank">About Us</a>
+                      </li>
+                  </ul>
+                
+                   
+              </div>
+          </div>
+      </div>
+  </nav>
+  <!-- <button id=scrollTopBtn title="Scroll to Top" type=button class="btn btn-success"></button> -->
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+    
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img style="height: 600px;" src="blogpage.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5></h5>
+          <p></p>
+        </div>
+      </div>
+
+     
+    </div>
+
+  </div>
+
+  <div style="background:linear-gradient(45deg,rgb(87, 205, 209),rgb(228, 236, 234))" id="disease">
+    <br>
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-3 fw-bold" style="color:rgb(41, 39, 39);" >DIET</h1>
+        <br>
+        <div class="col-lg-8 mx-auto">
+          <p class="lead mb-4" style="color:rgb(41, 39, 39); font-size: 30px;" class="display-3 fw-bold">  How your diet can affect stress levels, for better or worse
+            <br> </p><p class="lead mb-4" style="color:rgb(41, 39, 39)">
+                Now, at a time when you may feel you have little control, one thing you can get a grip on is your diet choices. And interestingly, these can make or break your Stress Levels. A poor diet can bring greater reactivity toward stress.11 Emotional eating and reaching for high-fat, high-sugar foods can provide a temporary sense of relief that adds to your long-term Stress Refined carbs, like cookies and potato chips, can cause a spike in blood sugar. When your blood sugar crashes, you might experience more stress and anxiety. Consuming a healthy diet can help you combat stress over the long haul. Foods like eggs, avocado, and walnuts support mood regulation and energy balance.
+          <br>
+        </p>
+        <h1 class="display-3 fw-bold" style="color:rgb(41, 39, 39);font-size: 40px;" >FOODS TO EAT WHEN YOUR STRESSED:</h1>
+        </div>
+  
+      </div>
+  
+      
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+           
+          
+          
+            <!-- START THE FEATURETTES -->
+          
+            
+          
+            <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">DARK CHOCOLATE <span class="text-muted"></span></h2>
+                <p class="lead">
+                    This treat could help reduce stress in two ways, via its chemical impact and its emotional impact. Dark chocolate is also rich in antioxidants, can also lower levels of stress hormones in the body, according to a study. Just be sure to avoid excess calories in your diet by not overindulging in chocolate. Make sure ,no more than 1 ounce of dark chocolate per day.
+
+                </p>
+              </div>
+              <div class="col-md-5">
+                <a href="avasa.html" target="_blank">
+                <img  src="pik1.jpg" class="responsive">
+              </a>
+              </div>
+            </div>
+          
+            <hr class="featurette-divider">
+          
+            <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">BANANAS <span class="text-muted"></span></h2>
+                <p class="lead">The yellow, potassium rich fruit contains the mood-boosting chemical dopamine, along with magnesium, levels of which plummet during stressful times. Bananas are furthermore a rich source of certain B vitamins, such as Vitamin B6 which helps the nervous system run correctly, and can decrease stress and fatigue</p>
+              </div>
+              <div class="col-md-5 order-md-1">
+                <a href="accordo.html" target="_blank">
+                <img src="pik2.jpg" class="responsive">
+              </a>
+              </div>
+            </div>
+          
+            <hr class="featurette-divider">
+          
+            <div class="row featurette">
+                <div class="col-md-7">
+                  <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">MILK <span class="text-muted"></span></h2>
+                  <p class="lead">
+                    Milk and other dairy with calcium and added VITAMIN D can help muscles relax and stabilize mood. calcium might not only strengthen your skeleton it could also brighten your mood.
+  
+                  </p>
+                </div>
+                <div class="col-md-5">
+                  <a href="avasa.html" target="_blank">
+                  <img  src="pik3.jpg" class="responsive">
+                </a>
+                </div>
+              </div>
+              <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                  <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">NUTS <span class="text-muted"></span></h2>
+                  <p class="lead">Nuts are a boon to your health in more ways than one.  They’re satiating, meaning they can help ward off unhealthy cravings. Also they can help in lowering your blood pressure, according to a study. Their B VITAMINS have been shown to help lower stress levels.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                  <a href="accordo.html" target="_blank">
+                  <img src="pik4.jpg" class="responsive">
+                </a>
+                </div>
+              </div>
+              <div class="row featurette">
+                <div class="col-md-7">
+                  <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">WATER <span class="text-muted"></span></h2>
+                  <p class="lead">
+                    The importance of hydration during stressful times is well-documented. Even mild dehydration can increase Cortisol Levels which contributes to increased stress. While drinking enough water will not make your stressors vanish, taking this step will help set your body up to handle stress when it does occur.
+  
+                  </p>
+                </div>
+                <div class="col-md-5">
+                  <a href="avasa.html" target="_blank">
+                  <img  src="pik5.jpg" class="responsive">
+                </a>
+                </div>
+              </div>
+              <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                  <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">GREEN TEA <span class="text-muted"></span></h2>
+                  <p class="lead">Green Tea contains an amino acid, which is receiving increasing scrutiny due to its potential effects on mood disorders. Theanine has anti-anxiety and calming effects and may increase the production of serotonin and dopamine.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                  <a href="accordo.html" target="_blank">
+                  <img src="pik6.jpg" class="responsive">
+                </a>
+                </div>
+              </div>
+        </div>
+            <!-- /.row -->
+          
+     
+          
+            <!-- /END THE FEATURETTES -->
+          
+          
+      
+
+
+<div style="background-color: rgb(12, 60, 75);">
+      <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-3 fw-bold" style="color:rgb(255, 255, 255);" >READER'S CORNER</h1>
+        <br>
+        <div class="col-lg-8 mx-auto">
+          <p class="lead mb-4" style="color:rgb(255, 255, 255); font-size: 30px;" class="display-3 fw-bold">  
+            <br> </p><p class="lead mb-4" style="color:rgb(207, 107, 107)" style="color: rgb(255, 255, 255);">
+                If you enjoy reading and books are your go-to friends for everything in life, we have brought for you this special corner which contains a list of must-read self-care or lifestyle books that can help you uplift your living standards.
+
+          <br>
+
+        </p>
+      
+        </div>
+  
+      </div>
+  
+      
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+           
+          
+          
+            <!-- START THE FEATURETTES -->
+          
+            
+          
+            <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">IKIGAI <span class="text-muted"></span></h2>
+                <p class="lead" style="color: rgb(255, 255, 255);">
+                    Mogi’s book reminds us that success and money aren’t everything and that if we appreciate the here and now – the small moments that make up the bigger picture of life – then we can find our own purpose and be happy.This book is an insightful and motivational read. Written in simple English, it will appeal to fans of Japanese culture, giving them a fresh perspective.For those who know nothing about ikigai or Japan, this book should enlighten you and open your eyes.
+
+
+                </p>
+                <p  style="color: rgb(255, 255, 255);">References :</p> <a href="https://www.thesundaily.my/style-life/reviews/book-review-the-little-book-of-ikigai-MF421169
+                    https://kislayverma.com/books/book-review-atomic-habits/
+                    https://www.goodreads.com/book/show/28257707-the-subtle-art-of-not-giving-a-f-ck">Click here
+                    </a>
+              </div>
+              <div class="col-md-5">
+                <a href="avasa.html" target="_blank">
+                <img  src="pik7.jpg" class="responsive">
+              </a>
+              </div>
+            </div>
+          
+            <hr class="featurette-divider">
+          
+            <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">ATOMIC HABITS <span class="text-muted"></span></h2>
+                <p class="lead" style="color: rgb(255, 255, 255);">Atomic Habits is a great book if you are looking for something prescriptive which will lay out a bunch of do’s and don'ts for creating new habits and breaking old ones. It is full of directly actionable advice. “A supremely practical and useful book. James Clear distills the most fundamental information about habit formation, so you can accomplish more by focusing on less.” says Mark Mansion (#1 New York Times best-selling author of The Subtle Art of Not Giving a F*ck)
+                </p>
+              </div>
+              <div class="col-md-5 order-md-1">
+                <a href="accordo.html" target="_blank">
+                <img src="pik8.jpg" class="responsive">
+              </a>
+              </div>
+            </div>
+          
+            <hr class="featurette-divider">
+          
+            <div class="row featurette">
+                <div class="col-md-7">
+                  <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">The Subtle Art of Not Giving a F*ck <span class="text-muted"></span></h2>
+                  <p class="lead" style="color: rgb(255, 255, 255);">
+                    A much-needed grab-you-by-the-shoulders-and-look-you-in-the-eye moment of real-talk, filled with entertaining stories and profane, ruthless humor, The Subtle Art of Not Giving a F**k is a refreshing slap for a generation to help them lead contented, grounded lives. Manson advises us to get to know our limitations and accept them.
+  
+                  </p>
+                </div>
+                <div class="col-md-5">
+                  <a href="avasa.html" target="_blank">
+                  <img  src="pik9.jpg" class="responsive">
+                </a>
+                </div>
+              </div>
+              <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                  <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">THE HIGH 5 HABITS<span class="text-muted"></span></h2>
+                  <p class="lead" style="color: rgb(255, 255, 255);">
+                    Using her signature science-backed wisdom, deeply personal stories, and the real-life results, Mel will teach you how to make believing in yourself a habit so that you operate with the confidence that your goals and dreams demand. The High 5 Habit is a simple yet profound tool that changes your attitude, your mindset, and your behavior. So be prepared to laugh and learn as you take steps to immediately boost your confidence, happiness, and results.
+                    
+                  </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                  <a href="accordo.html" target="_blank">
+                  <img src="pik10.png" class="responsive">
+                </a>
+                </div>
+              </div>
+              <div class="row featurette">
+                <div class="col-md-7">
+                  <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">The Things You Can See Only When You Slow Down : How to Be Calm and Mindful in a Fast-Paced World <span class="text-muted"></span></h2>
+                  <p class="lead" style="color: rgb(255, 255, 255);">
+                    This is one of my most-recommended books. In this relaxing book (one that you’ll want to return to again and again), Haemin Sunim, a Buddhist meditation teacher born in Korea and educated in the US, shares his advice for wellbeing, mindfulness and joy in eight areas, including love, friendship, work, and spirituality.The book is beautiful, and not just for its writing: it contains over thirty full-page colourful and calming illustrations to help us slow down. To best enjoy these, get the little hardback edition if you can.
+  
+                  </p>
+                  <p class="featurette-heading" style="color: rgb(255, 255, 255);">References:</p>
+                  <a href="https://www.tolstoytherapy.com/12-calming-books-to-help-you-take-deep/">Link 1</a>"
+        <a href="https://www.amazon.com/High-Habit-Take-Control-Simple-ebook/dp/B096JQSWQ6">Link 2</a>
+                </div>
+                <div class="col-md-5">
+                  <a href="avasa.html" target="_blank">
+                  <img  src="pik11.jpg" class="responsive">
+                </a>
+                </div>
+              </div>
+            
+</div>
+            <!-- /.row -->
+          
+            
+          
+            <!-- /END THE FEATURETTES -->
+          
+          </div>
+          
+        <div class="overflow-hidden" style="max-height: 30vh;">
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:linear-gradient(45deg,rgb(87, 205, 209),rgb(228, 236, 234))" id="disease">
+        <br>
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-3 fw-bold" style="color:rgb(41, 39, 39);" >LET THE MUSIC TAKE YOU AWAY</h1>
+            <br>
+            <div class="col-lg-8 mx-auto">
+              <p class="lead mb-4" style="color:rgb(41, 39, 39); font-size: 30px;" class="display-3 fw-bold"> 
+                <br> </p><p class="lead mb-4" style="color:rgb(41, 39, 39)">
+                    You can energize your body or relax it with the right music. You may have heard that classical music brings many benefits, but honestly the secret is any type of music that you enjoy can bring a benefit, you just need to find your type. Music with a fast tempo really can energize your physiology, and music with a calm tempo can relax your body and mind.﻿ If you find lyrics that speak to you and the mood you’re currently in (or would like to be in), you then have a great low-effort way to relieve stress while you eat—or while you walk or drive to lunch. (If you’re self-conscious about sharing your tunes, earbuds are always nice to have.)
+
+
+              <br>
+            </p>
+            <h1 class="display-3 fw-bold" style="color:rgb(41, 39, 39);font-size: 40px;" ></h1>
+            </div>
+      
+          </div>
+      
+          
+            <div class="container marketing">
+    
+                <!-- Three columns of text below the carousel -->
+               
+              
+              
+                <!-- START THE FEATURETTES -->
+              
+                
+              
+                <div class="row featurette">
+                  <div class="col-md-7">
+                    <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">Science Behind the Wonders of Music <span class="text-muted"></span></h2>
+                    <p class="lead">
+                        When we listen to music, blood flows out of a region in the brain, contracting the muscles of that region.
+In the interim, there is a state of reduced pressure and progressive relaxation in that region.
+The repeated process causes blood to flow from the UEF(Universal Energy Field) to the HEF(Human Energy Field) transmitted by different tones of Ragas affecting the CNS(Central Nervous System).
+
+    
+                    </p>
+                  </div>
+                  <div class="col-md-5">
+                    <a href="avasa.html" target="_blank">
+                    <img  src="pik16.jpg" class="responsive">
+                  </a>
+                  </div>
+                </div>
+              
+                <hr class="featurette-divider">
+              
+                <div class="row featurette">
+                  <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">How Music Helps in Reducing Stress
+                        <span class="text-muted"></span></h2>
+                    <p class="lead">It has long been suggested that music can help reduce or manage stress. Consider the trend centered on meditative music created to soothe the mind and inducing relaxation. Fortunately, this is one trend supported by research. Listening to music can be an effective way to cope with stress.
+                        In one 2013 study, participants took part in one of three conditions before being exposed to a stressor and then taking a psychosocial stress test. Some participants listened to relaxing music, others listened to the sound of rippling water, and the rest received no auditory stimulation.
+                        The results suggested that listening to music had an impact on the human stress response, particularly the autonomic nervous system. Those who had listened to music tended to recover more quickly following a stressor.
+                         
+                        </p class="lead"><b>Here’s the spotify playlist for relaxing music :</b></p>
+                        <a href="https://open.spotify.com/playlist/1r4hnyOWexSvylLokn2hUa?si=907c86005a9548b5">Click Here</a>
+                  </div>
+                  <div class="col-md-5 order-md-1">
+                    <a href="accordo.html" target="_blank">
+                    <img src="pik12.jpg" class="responsive">
+                  </a>
+                  </div>
+                </div>
+              
+                <hr class="featurette-divider">
+              
+                <div class="row featurette">
+                    <div class="col-md-7">
+                      <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">Always Stay in Your Rhythm<span class="text-muted"></span></h2>
+                      <p class="lead">
+                        The biggest advantage of music is, you can listen to it anytime and anywhere. Here’s a small list of activities you can add energy, peace and love to as you perform them while listening to your favourite songs.
+                        <ul><li>During a Commute</li>
+                        <li>Cooking</li>
+                        <li>Before Bed</li>
+                        <li>Cleaning</li>
+                        <li>While Eating</li>
+                      <li> When Getting Ready in the Morning</li> 
+                    </ul>
+      
+                      </p>
+                    </div>
+                    <div class="col-md-5">
+                      <a href="avasa.html" target="_blank">
+                      <img  src="pik13.jpg" class="responsive">
+                    </a>
+                    </div>
+                  </div>
+                  <div class="row featurette">
+                    <div class="col-md-7 order-md-2">
+                      <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">How Music Helps You in Sleeping Better<span class="text-muted"></span></h2>
+                      <p class="lead">Insomnia is a serious problem that affects people of all age groups. While there are many approaches to treating this problem, research has demonstrated that listening to relaxing classical music can be a safe, effective, and affordable remedy.​
+                        In a study looking at college students, participants listened to classical music, an audiobook, or nothing at all at bedtime for three weeks. Researchers assessed sleep quality both before and after the intervention.
+                        The study found that participants who had listened to music had significantly better sleep quality than those who had listened to the audiobook or received no intervention.
+                        </p>
+                    </div>
+                    <div class="col-md-5 order-md-1">
+                      <a href="accordo.html" target="_blank">
+                      <img src="pik14.jpg" class="responsive">
+                    </a>
+                    </div>
+                  </div>
+                  <div class="row featurette">
+                    <div class="col-md-7">
+                      <h2 class="featurette-heading" style="color: rgb(4, 36, 24);">Music and Meditations <span class="text-muted"></span></h2>
+                      <p class="lead">
+                        Combining music with meditation can deepen the positive effects of both, and bring you greater stress relief. As an added bonus, for many people who are beginners to meditation, or who are perfectionists, music meditation can feel simpler and more instantly relaxing than other forms of practice.
+                      </p>
+                      <p><b>References: </b></p>
+                      <a href="https://www.instagram.com/raahee.mentalhealth/">Link 1</a>
+                      <a href="https://www.verywellmind.com/surprising-psychological-benefits-of-music-4126866">Link 2</a>
+                      <a href="https://www.verywellmind.com/lunchtime-stress-relief-strategies-3955959">Link 3</a>
+                      <a href="https://www.verywellmind.com/how-to-practice-music-meditation-3144791">Link 4</a>
+                    </div>
+                    <div class="col-md-5">
+                      <a href="avasa.html" target="_blank">
+                      <img  src="pik15.jpg" class="responsive">
+                    </a>
+                    </div>
+                  </div>
+   
+            </div>
+            
+
+<div style="background-color: rgb(12, 60, 75);">
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+      <h1 class="display-3 fw-bold" style="color:rgb(255, 255, 255);" >TAKE A BREAK</h1>
+      <br>
+      <div class="col-lg-8 mx-auto">
+        <p class="lead mb-4" style="color:rgb(255, 255, 255); font-size: 30px;" class="display-3 fw-bold">  
+          <br> </p><p class="lead mb-4" style="color:rgb(207, 107, 107)" style="color: rgb(255, 255, 255);">
+            In this modern rat race, we all are moving too fast. All we want to do is achieve success as soon as possible and so we think that taking a break, might be wasting our time. But we are wrong!! We fail to understand that if we go on like this, ignoring our health and just focusing on ‘our definition of success’, which is ‘Money’, we might end up as a mess. Health effects our productivity too, so it becomes even more important to focus on it. We are the hares in the story of ‘The Hare and the Tortoise’ and we need to take that much needed break to relax ourselves. 
+
+            When you take a break, you’re not shirking responsibility. You’re taking care of yourself so you’ll have the stamina to be at your best. 
+            
+            Take a look at these signs that might be indicating that you need to pause, so that you can schedule some time away that will help you feel more refreshed and restored. 
+
+        <br>
+
+      </p>
+    
+      </div>
+
+    </div>
+
+    
+      <div class="container marketing">
+
+          <!-- Three columns of text below the carousel -->
+         
+        
+        
+          <!-- START THE FEATURETTES -->
+        
+          
+        
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading" style="color: rgb(255, 255, 255);"> SIGNS THAT YOU NEED A BREAK <span class="text-muted"></span></h2>
+              <p class="lead" style="color: rgb(255, 255, 255);">
+      
+              </p class="lead">
+              <ul style="color: white;">
+                  <li>Changes in your eating habits </li>
+                  <li>Cynicism about your work </li>
+                  <li>Difficulty in concentrating </li>
+                  <li>Falling ill frequently </li>
+                  <li>Lack of energy and motivation </li>
+                  <li>Lack of sleep </li>
+                  <li>Low mood </li>
+                  <li>Frustration. </li>
+                  <li>Feeling unfocused or frizzy-headed </li>
+                  <li> Physical symptoms, such as headaches or stomach aches</li>
+                  <li>Poor performances at work </li>
+                  <li>Using drugs, alcohol or smoking to cope with the stress </li>
+                  <li>withdrawing from friends, family or co-workers </li>
+              </ul>
+              <p  style="color: rgb(255, 255, 255);">References :</p> <a href="https://youtu.be/GieO8uI58tM">Click here
+                  </a>
+                  <p class="lead" style="color: white;">If you have any of these symptoms, its an alarm ringing to tell you that you should wake up and start focusing on your mental and physical health along with your work. You are probably overwhelmed from the stacks of work you have done and its  time for a Vacation!</p>
+            </div>
+            <div class="col-md-5">
+              <a href="avasa.html" target="_blank">
+              <img  src="pik17.jpg" class="responsive">
+            </a>
+            </div>
+          </div>
+        
+          <hr class="featurette-divider">
+        
+          <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+              <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">HOW TO TAKE A BREAK <span class="text-muted"></span></h2>
+              <p class="lead" style="color: rgb(255, 255, 255);">We think that break is a flexible term. The idea of a ‘Break’ is different from everybody. For some it is listening to good music might be therapeutic, while for others even drawing can do wonders 
+
+                It's just about finding what suits you, you can either take up a hobby or restart something you enjoyed, but just try doing something different from your daily routine by adding something to it. 
+                
+                Now, we will discuss some of the most common ways of taking a break in brief that might work for you too. 
+              </p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <a href="accordo.html" target="_blank">
+              <img src="pik18.jpg" class="responsive">
+            </a>
+            </div>
+          </div>
+        
+          <hr class="featurette-divider">
+        
+          <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">VACATION:<span class="text-muted"></span></h2>
+                <p class="lead" style="color: rgb(255, 255, 255);">
+                    The key to a restful vacation is to prioritize rest and fun when you go; don’t overbook yourself with tourist activities or bring so much work with you that by the time you return, you feel you need a vacation from your vacation. 
+
+                </p>
+              </div>
+              <div class="col-md-5">
+                <a href="avasa.html" target="_blank">
+                <img  src="pik19.jpg" class="responsive">
+              </a>
+              </div>
+            </div>
+            <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">STAYCATION:<span class="text-muted"></span></h2>
+                <p class="lead" style="color: rgb(255, 255, 255);">
+                   
+
+It is all about rest and relaxation, and enjoying home sweet home – a place you are often too stressed and busy to really enjoy. The key to a refreshing staycation is, don’t overdo it and don’t let work creep in. You can also turn off your phones, ignore emails and make it a point to bath rest and play at home. “It’s important to still put your OUT OF OFFICE up on your email and try to resist checking your email regularly”, says Dr. Goldman. 
+                  
+                </p>
+              </div>
+              <div class="col-md-5 order-md-1">
+                <a href="accordo.html" target="_blank">
+                <img src="pik20.jpg" class="responsive">
+              </a>
+              </div>
+            </div>
+            <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">SHORT BREAKS: <span class="text-muted"></span></h2>
+                <p class="lead" style="color: rgb(255, 255, 255);">
+                    Sometimes you just need 10 minutes away from your screen to relax your eyes. You can go outdoors for on some time to get some fresh-air, listen to music, watch a movie, do meditation and the list is never ending. You didn’t necessarily need to take leave to take a break, a short-break might be enough for you! 
+
+                </p>
+                <p class="lead" style="color: white;">References</p><a href="https://www.verywellmind.com/why-you-should-take-a-break-3144576 ">Click here</a>
+                
+              </div>
+              <div class="col-md-5">
+                <a href="avasa.html" target="_blank">
+                <img  src="pik21.jpg" class="responsive">
+              </a>
+              </div>
+            </div>
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                  <h2 class="featurette-heading" style="color: rgb(255, 255, 255);">PLAYCATION:<span class="text-muted"></span></h2>
+                  <p class="lead" style="color: rgb(255, 255, 255);">
+                     
+  
+                    Playcation is all about having fun. You will be astonished to see how that can recharge your batteries. You can take out some time specially for it or just pepper in some fun in your daily work too. You can play games, dance, watch comedy videos, you can do anything you want but just enjoy your lives. 
+                    
+                  </p>
+                  <p class="lead" style="color: white;">Reference:</p>
+                  <a href="https://www.verywellmind.com/why-you-should-take-a-break-3144576 ">Click here</a>
+                </div>
+                <div class="col-md-5 order-md-1">
+                  <a href="accordo.html" target="_blank">
+                  <img src="pik22.jpg" class="responsive">
+                </a>
+                </div>
+              </div>
+            
+          
+</div>
+          <!-- /.row -->
+        
+          
+        
+          <!-- /END THE FEATURETTES -->
+        
+        </div>
+        
+      <div class="overflow-hidden" style="max-height: 30vh;">
+      </div>
+    </div>
+
+  </div>
+  
+     
+
+   
+
+    
+
+      <!-- /.row -->
+     
+    </div>
+    
+
+      
+      
+    
+    
+              
+
+        <footer style="background:linear-gradient(45deg,rgb(1, 56, 40),rgb(27, 56, 184))">
+            <div class="container">
+                <br>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <img src="Images/lsticker-removebg-preview.png" alt="" width="180" class="mb-3">
+                    <p class="font-italic" style="color: azure;">Helping you to measure risk of diseases, take precaution and become a healthier you.</p>
+                  </div>
+                  <div class="col-sm-4">
+                    <h6 class="text-uppercase font-weight-bold" style="color: azure;">Newsletter</h6>
+                  <p style="color:azure">Interested in receiving our monthly e-newsletter with tips to improve lifestyle and latest health related news?Then what are you waiting for..Sign Up now!!</p>
+                  <div class="p-1 rounded border">
+                    <div class="input-group">
+                      <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+                      <div class="input-group-append">
+                        <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <hr style="color:azure;">
+                <div class="container text-center">
+                    <p class="text-muted mb-0 py-2">Made by students of B.Tech, Indira Gandhi Delhi Technical University for Women, Delhi</p>
+                    <br>
+                  </div>
+              </div>
+          </footer>
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+          crossorigin="anonymous"></script>
+          <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+              if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("navbar").style.backgroundColor="#212529";
+              } else {
+                document.getElementById("navbar").style.backgroundColor = "#ffffff00";
+              }
+            }
+        </script>
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
