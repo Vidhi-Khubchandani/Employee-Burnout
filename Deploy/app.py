@@ -1,5 +1,5 @@
 import streamlit as st
-from predict import main
+from prediction import main
 
 page = st.sidebar.selectbox("Explore or Predict",("Predict","Explore"))
 
